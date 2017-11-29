@@ -8,6 +8,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Sergunis/exp-islands.git"
+  },
   "license": "ISC",
   "dependencies": {
     "react": "^16.1.1",
