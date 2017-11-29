@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
+import CalculateArea from './components/calculate_area'
+
 class App extends Component {
 
   constructor(props) {
@@ -119,9 +121,7 @@ class App extends Component {
           </table>
         </div>
 
-        <button className="btn btn-info calculate">
-          Calculate maximum island area
-        </button>
+        <CalculateArea/>
 
       </div>
     );

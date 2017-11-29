@@ -9,3 +9,15 @@
 .calculate {
     margin-top: 20px;
 }
+
+.loader {
+    margin-left: 10px;
+    display: none;
+}
+.loader.active {
+    display: inline;
+}
+
+.result {
+    margin-top: 10px;
+}
