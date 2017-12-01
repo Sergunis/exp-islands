@@ -20,6 +20,7 @@
 
 .islands {
     margin-top: 40px;
+    overflow-x: scroll;
 }
 .result {
     margin-top: 10px;

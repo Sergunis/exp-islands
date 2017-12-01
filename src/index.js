@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import CalculateArea from './components/calculate_area'
+import Islands from './components/islands'
 
 class App extends Component {
 
@@ -9,8 +10,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      percentFill: 30,
-      oceanSize: 10,
+      percentFill: 40,
+      oceanSize: 50,
       islands: []
     };
   }
@@ -59,35 +60,6 @@ class App extends Component {
     return arr;
   }
 
-  renderIslands() {
-    const islands = this.state.islands.map((raw, index) => {
-      return (
-        <tr key={`raw${index}`}>{this.renderIslandRaw(raw, index)}</tr>
-      );
-    });
-
-    return islands;
-  }
-
-  renderIslandRaw(raw, index_raw) {
-    const out = raw.map((item, index) => {
-      return (
-        <td key={`col${index_raw}${index}`}>{this.renderPoint(item)}</td>
-      );
-    });
-
-    return out;
-  }
-
-  renderPoint(point) {
-    switch (point) {
-      case 0:
-        return <button className="btn btn-default">{point}</button>;
-      case 1:
-        return <button className="btn btn-primary">{point}</button>;
-    }
-  }
-
   render() {
     return (
       <div>
@@ -127,17 +99,9 @@ class App extends Component {
           islands={this.state.islands}
         />
 
-        <div className="islands">
-          <h3>Islands</h3>
-          <table>
-            <tbody>
-            {this.renderIslands()}
-            </tbody>
-          </table>
-        </div>
-
-
-
+        <Islands
+          islands={this.state.islands}
+        />
       </div>
     );
   }
