@@ -2,7 +2,7 @@
     margin-top: 20px;
 }
 
-#percent-fill {
+#percent-fill, #ocean-size {
     margin: 0 20px;
 }
 
@@ -18,6 +18,9 @@
     display: inline;
 }
 
+.islands {
+    margin-top: 40px;
+}
 .result {
     margin-top: 10px;
 }

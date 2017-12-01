@@ -18,7 +18,7 @@ class CalculateArea extends Component {
 
       let worker = new Worker("./workers/calculate_area.js");
 
-      worker.postMessage([[1, 0], [0, 1]]);
+      worker.postMessage(this.props.islands);
 
       worker.onerror = (e) => {
         console.error("There is an error with your worker!");

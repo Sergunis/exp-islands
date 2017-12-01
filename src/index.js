@@ -10,16 +10,17 @@ class App extends Component {
 
     this.state = {
       percentFill: 30,
+      oceanSize: 10,
       islands: []
     };
   }
 
   componentDidMount() {
-    this.generateIslands();
+    this.generateIslands(this.state.oceanSize);
   }
 
   onButtonClick() {
-    this.generateIslands();
+    this.generateIslands(this.state.oceanSize);
   }
 
   /**
@@ -92,7 +93,7 @@ class App extends Component {
       <div>
         <form className="form-inline">
           <div className="form-group">
-            <label form="percent-fill">Enter a percent fill</label>
+            <label htmlFor="percent-fill">Enter a percent fill</label>
             <input
               type="text"
               id="percent-fill"
@@ -100,6 +101,16 @@ class App extends Component {
               className="form-control"
               onChange={(event) => this.setState({ percentFill: event.target.value })}
               value={this.state.percentFill}
+            />
+
+            <label htmlFor="ocean-size">Ocean size</label>
+            <input
+              type="text"
+              id="ocean-size"
+              placeholder="Enter an ocean size"
+              className="form-control input-sm"
+              onChange={(event) => this.setState({ oceanSize: event.target.value })}
+              value={this.state.oceanSize}
             />
 
             <button
@@ -112,6 +123,10 @@ class App extends Component {
           </div>
         </form>
 
+        <CalculateArea
+          islands={this.state.islands}
+        />
+
         <div className="islands">
           <h3>Islands</h3>
           <table>
@@ -121,7 +136,7 @@ class App extends Component {
           </table>
         </div>
 
-        <CalculateArea/>
+
 
       </div>
     );
